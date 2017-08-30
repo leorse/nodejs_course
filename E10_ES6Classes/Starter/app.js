@@ -1,11 +1,23 @@
-function Person(firstname, lastname){
-	this.firstname = firstname;
-	this.lastname = lastname;
+'use strict';
+//sue string permet d'être plus string dans la syntaxe et d'empêcher 
+//JS de valider certaines façon de faire:
+//par ex:
+//a=3; n'est pas autorisé car on ne peut pas utiliser une variable sans la déclarer avant
+//snas use string, on pourrait le faire
+class Person {
+	constructor(firstname, lastname)
+	{
+		this.firstname = firstname;
+		this.lastname = lastname;
+	}
+
+	greet() 
+	{
+		console.log('Hello, '+this.firstname + ' ' + this.lastname);
+	}
 }
 
-Person.prototype.greet  =function() {
-	console.log('Hello, '+this.firstname + ' ' + this.lastname);
-}
+
 
 var john = new Person('John', 'Doe');
 john.greet();
